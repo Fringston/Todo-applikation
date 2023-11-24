@@ -19,10 +19,16 @@ public class Todo {
     private String name;
     private String description;
 
-    //Annoteringen @Temporal(TemporalType.DATE) innebär att datumkomponenten (år, månad, dag) kommer att beaktas
-    //och tiden kommer att ignoreras.
-    @Temporal(TemporalType.DATE)
+    //Annoteringen @Temporal(TemporalType.TIMESTAMP) innebär att creationDate ska hanteras som en tidsstämpel i databasen.
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
+
+    //Annoteringen @PrePersist används för att specificera en callback-metod som ska köras innan en entitet sparas i databasen.
+    @PrePersist
+    //Metoden sätter creantionDate till det aktuella datumet och tiden precis innan Todo-entiteten sparas i databasen.
+    protected void onCreate() {
+        creationDate = new Date();
+    }
 
     private Boolean isDone;
 
