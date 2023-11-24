@@ -25,13 +25,12 @@ public class Todo {
 
     //Annoteringen @PrePersist används för att specificera en callback-metod som ska köras innan en entitet sparas i databasen.
     @PrePersist
-    //Metoden sätter creantionDate till det aktuella datumet och tiden precis innan Todo-entiteten sparas i databasen.
+    //Metoden sätter creationDate till det aktuella datumet och tiden precis innan Todo-entiteten sparas i databasen.
     protected void onCreate() {
         creationDate = new Date();
     }
 
     private Boolean isDone;
-
 
     public Integer getTodoId() {
         return todoId;

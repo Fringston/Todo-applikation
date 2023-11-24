@@ -24,6 +24,12 @@ public class TodoController {
         return todoRepository.findAll();
     }
 
+    //Hanterar GET-förfrågningar till "/admin/todos/{1}" för att hämta en Todo.
+    @GetMapping("/{id}")
+    public Todo getOneTodo(@PathVariable Integer id) {
+        return todoRepository.findById(id).get();
+    }
+
     //Hanterar POST-förfrågningar till "/admin/todos/" för att skapa en ny Todo.
     @PostMapping("/")
     public Todo createTodo(@RequestBody Todo todo) {

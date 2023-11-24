@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface TodoRepository extends JpaRepository<Todo, Integer> {
-    Optional<Todo> findById(String name);
+    Optional<Todo> findById(Integer todoId);
 }
