@@ -2,6 +2,8 @@ package com.fredrikkodar.Todoapplikation.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 //Annoteringen @Entity indikerar att klassen är en JPA entitet, dvs att den ska mappas till en tabell i databasen.
@@ -19,15 +21,13 @@ public class Todo {
     private String name;
     private String description;
 
-    //Annoteringen @Temporal(TemporalType.TIMESTAMP) innebär att creationDate ska hanteras som en tidsstämpel i databasen.
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date creationDate;
+    private LocalDateTime creationDate;
 
     //Annoteringen @PrePersist används för att specificera en callback-metod som ska köras innan en entitet sparas i databasen.
     @PrePersist
     //Metoden sätter creationDate till det aktuella datumet och tiden precis innan Todo-entiteten sparas i databasen.
     protected void onCreate() {
-        creationDate = new Date();
+        creationDate = LocalDateTime.now();
     }
 
     private Boolean isDone;
@@ -56,19 +56,19 @@ public class Todo {
         this.description = description;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
     public Boolean getIsDone() {
         return isDone;
     }
 
     public void setIsDone(Boolean done) {
         isDone = done;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 }

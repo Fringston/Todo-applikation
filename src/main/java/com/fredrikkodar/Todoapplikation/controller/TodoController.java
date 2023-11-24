@@ -42,7 +42,10 @@ public class TodoController {
         Todo todo = todoRepository.findById(id).get();
         todo.setName(todoDetails.getName());
         todo.setDescription(todoDetails.getDescription());
-        todo.setCreationDate(todoDetails.getCreationDate());
+        // Kontrollera om creationDate i todoDetails är null innan du sätter det
+        if (todoDetails.getCreationDate() != null) {
+            todo.setCreationDate(todoDetails.getCreationDate());
+        }
         todo.setIsDone(todoDetails.getIsDone());
         return todoRepository.save(todo);
     }
