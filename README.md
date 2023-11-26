@@ -31,13 +31,13 @@ I received help and inspiration from the following sources:
 
 ## Dependencies
 
-* [spring-boot-starter-data-jpa](https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple)
-* [spring-boot-starter-web](https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5)
-* [spring-boot-devtools](https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka/3.0.11)
-* [mysql-connector-j](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa/3.1.4)
-* [spring-boot-starter-test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/3.1.4)
-* [spring-boot-starter-security](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/3.1.4)
-* [spring-boot-starter-oauth2-resource-server](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter/5.7.0)
+* [spring-boot-starter-data-jpa](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa)
+* [spring-boot-starter-web](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web)
+* [spring-boot-devtools](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools)
+* [mysql-connector-j](https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.2.0)
+* [spring-boot-starter-test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test)
+* [spring-boot-starter-security](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security)
+* [spring-boot-starter-oauth2-resource-server](https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2)
 
 
 
