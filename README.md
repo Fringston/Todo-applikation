@@ -1,7 +1,12 @@
 # Todo-applikation
-Spring-applikation med säker registrering och inloggning där man skapar to do's. 
+Spring application with secure registration and login where the user can store their todos.
 
 ## Description
+The Todo application is a RESTful API service built with Java and Spring Boot. It provides a secure platform for users to manage their todos. 
+The application features secure user registration and login functionality, and allows users to create, read, update, and delete todos. 
+The application uses MySQL for data persistence and Postman for testing the API endpoints. 
+It also leverages Spring Security for authentication and authorization, ensuring that only authenticated users can access their respective todos. 
+The application is designed with a focus on simplicity and ease of use, making it a great tool for personal task management. 
 
 
 ## Installation
