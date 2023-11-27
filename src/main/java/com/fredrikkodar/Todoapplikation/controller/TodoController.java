@@ -27,8 +27,7 @@ public class TodoController {
     //Hanterar GET-förfrågningar till "/admin/todos/{1}" för att hämta en Todo.
     @GetMapping("/{id}")
     public Todo getOneTodo(@PathVariable Integer id) {
-        return todoRepository.findById(id).get();
-    }
+        return todoRepository.findById(id).get();}
 
     //Hanterar POST-förfrågningar till "/admin/todos/" för att skapa en ny Todo.
     @PostMapping("/")

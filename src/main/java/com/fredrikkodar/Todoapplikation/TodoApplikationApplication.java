@@ -29,7 +29,7 @@ public class TodoApplikationApplication {
 			// Om den finns, avslutas metoden tidigt och inget mer görs.
 			if (roleRepository.findByAuthority("ADMIN").isPresent()) return;
 
-			// Skapar en ny Role-instans med auktoriteten "ADMIN" och sparar den i databasen.
+			//Skapar en ny Role-instans med auktoriteten "ADMIN" och sparar den i databasen.
 			Role adminRole = roleRepository.save(new Role("ADMIN"));
 
 			//Skapar en ny Role-instans med auktoriteten "USER" och sparar den i databasen.
