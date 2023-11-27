@@ -8,6 +8,11 @@ The application uses MySQL for data persistence and Postman for testing the API 
 It also leverages Spring Security for authentication and authorization, ensuring that only authenticated users can access their respective todos. 
 The application is designed with a focus on simplicity and ease of use, making it a great tool for personal task management. 
 
+**Regular user can:** Create and read Todos.
+
+**Admin users can:** Create, read, update and delete Todos.
+
+The application will automatically create an admin account if it does not already exist. The username is *admin* and the password is *password*.
 
 ## Installation
 
@@ -20,30 +25,58 @@ Before you can start this project, you must follow these steps:
 
 ## Usage
 
-1. Set up the MySQL database:  
+### 1. Set up the MySQL database:
 - Open MySQL Workbench.
 - Connect to your MySQL server.
 - Create a new schema for the application. You can do this by clicking on the "Create a new schema in the connected server" button, entering a name for the schema, and clicking "Apply".
 - Ensure that the *schema name* *username*, and *password* in the application.properties file match your MySQL setup.
 
-2. Start the application:  
+### 2. Start the application:
 - Open your IDE and run the TodoApplikationApplication class to start the application.
 
-3. Test the application with Postman:  
+### 3. Test the application with Postman:
 - Open Postman.
 - Create a new request by clicking on the "New" button and selecting "Request".
-- Enter the URL for the endpoint you want to test. The base URL will be http://localhost:8080/admin/todos/ (assuming the application is running on port 8080 on your local machine).
-- Select the HTTP method for the request (GET, POST, PUT, or DELETE) depending on the operation you want to perform.
-- If you're creating a new Todo (POST request) or updating an existing one (PUT request), you'll need to provide the Todo details in the request body. 
-Click on the "Body" tab, select "raw", and choose "JSON" from the dropdown menu. Then enter the Todo details in JSON format, for example:
+- To log in, choose POST-request and enter the URL http://localhost:8080/auth/login. 
+Click on the "Body" tab, select "raw", and choose "JSON" from the dropdown menu. For admin login (full CRUD), enter:
+
+```
 {
-"name": "New Todo",
-"description": "This is a new todo",
-"isDone": false
+  "username": "admin",
+  "password": "password"
 }
+```
+
 - Click "Send" to send the request. The response will be displayed in the section below.
 
-4. View the data in MySQL Workbench:  
+- Copy the JWT that is displayed in the response:
+
+![img_2.png](img_2.png)
+ 
+- Enter the URL for the todo-endpoint you want to test. The base URL for admin is: http://localhost:8080/admin/todos/.
+
+- Select the HTTP method for the request (GET, POST, PUT, or DELETE) depending on the operation you want to perform.
+
+- If you're creating a new Todo (POST request) or updating an existing one (PUT request), you'll need to provide the Todo details in the request body. 
+Click on the "Body" tab, select "raw", and choose "JSON" from the dropdown menu. Then enter the Todo details in JSON format, for example:
+
+```
+{
+"name": "Åk och köp mat",
+"description": "Ta bilen och kör iväg till ICA",
+"isDone": "false"
+}
+```
+
+- Click "Authorization" --> "Bearer token" and paste the JWT in the Token box:
+![img_3.png](img_3.png)
+
+- Click "Send" to send the request. The response will be displayed in the section below.
+
+![img_7.png](img_7.png)
+
+
+### 4. View the data in MySQL Workbench:
 - In MySQL Workbench, open the schema you created for the application.
 - Click on the "Tables" section to expand it.
 - Right-click on the todos table and select "Select Rows - Limit 1000" to view the data in the table.

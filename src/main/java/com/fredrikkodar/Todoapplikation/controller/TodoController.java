@@ -19,7 +19,7 @@ public class TodoController {
     private TodoRepository todoRepository;
 
     //Hanterar GET-förfrågningar till "/admin/todos/" för att hämta alla Todos.
-    @GetMapping
+    @GetMapping("/")
     public List<Todo> getAllTodos() {
         return todoRepository.findAll();
     }
@@ -42,7 +42,7 @@ public class TodoController {
         Todo todo = todoRepository.findById(id).get();
         todo.setName(todoDetails.getName());
         todo.setDescription(todoDetails.getDescription());
-        // Kontrollera om creationDate i todoDetails är null innan du sätter det
+        //Kontrollera om creationDate i todoDetails är null innan du sätter det
         if (todoDetails.getCreationDate() != null) {
             todo.setCreationDate(todoDetails.getCreationDate());
         }
