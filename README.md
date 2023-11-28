@@ -1,5 +1,5 @@
 # Todo-applikation
-Spring application with secure registration and login where the user can store their todos.
+A Spring application with secure registration and login where the user can store their todos.
 
 ## Description
 The Todo application is a RESTful API service built with Java and Spring Boot. It provides a secure platform for users to manage their todos. 
@@ -29,7 +29,7 @@ Before you can start this project, you must follow these steps:
 - Open MySQL Workbench.
 - Connect to your MySQL server.
 - Create a new schema for the application. You can do this by clicking on the "Create a new schema in the connected server" button, entering a name for the schema, and clicking "Apply".
-- Ensure that the *schema name* *username*, and *password* in the application.properties file match your MySQL setup.
+- Ensure that the *schema name*, *username*, and *password* in the application.properties file match your MySQL setup.
 
 ### 2. Start the application:
 - Open your IDE and run the TodoApplikationApplication class to start the application.
@@ -80,9 +80,10 @@ Click on the "Body" tab, select "raw", and choose "JSON" from the dropdown menu.
 ![img_7.png](img_7.png)
 
 
+
 **<u>As a regular user:</u>**
 
-- To log in as a regular user, you must first register a user using this URL: http://localhost:8080/auth/register.
+- To log in as a regular user, you must first register a new user using this URL: http://localhost:8080/auth/register.
 - Do this by creating a new POST-request, click on the "Body" tab, select "raw", and choose "JSON" from the dropdown menu.
   Then enter your chosen username and password, for example:
 

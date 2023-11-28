@@ -41,7 +41,7 @@ public class TodoController {
         Todo todo = todoRepository.findById(id).get();
         todo.setName(todoDetails.getName());
         todo.setDescription(todoDetails.getDescription());
-        //Kontrollera om creationDate i todoDetails är null innan du sätter det
+        //Kontrollerar om creationDate i todoDetails är null innan det sätts
         if (todoDetails.getCreationDate() != null) {
             todo.setCreationDate(todoDetails.getCreationDate());
         }
